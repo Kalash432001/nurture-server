@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 @Entity
 @ToString
-public class User_Dtls {
+public class User_Detail {
 
     private static final long serialVersionUID = 1L;
 
@@ -45,8 +45,8 @@ public class User_Dtls {
     private LocalDate createDate;
 
 
-    public static User_Dtls create(int userId, String userName, String idProofType, String idDtls, String address,int mobileNo, String userType, LocalDate createDate) {
-        User_Dtls o = new User_Dtls();
+    public static User_Detail create(String userName, String idProofType, String idDtls, String address, int mobileNo, String userType, LocalDate createDate) {
+        User_Detail o = new User_Detail();
         o.userName = userName;
         o.idProofType = idProofType;
         o.idDtls = idDtls;
