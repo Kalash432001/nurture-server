@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "balasha-nurture",
+  "private_key_id": "26510435968274a32c4e6a84e27b8a8c2130d1b5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDET5OejaNzlY2R\n/SSCK3cXC+twn9DLWlBjLc6wJq0BRel3/ncp4j7UEoBa6KaJBaWDdGZkNncbkkEw\n+HKDQC7Jn9kbQIN/JAwbk5pJ9y9IdzxuFtWIUSW13m3oYn5PJf2x/DKCFXfJCeZf\njgeuhQRj+aQnQrge+JOVwbaGYfKtr1FWoAjjjZk0rlJcL289EQ6UjjWh/5TlMJlf\nJtX9QPIen/Cp3s3LsxY5vlT1CvVfLJTmheTS6/FP2GPxxI4zgDo5QGzuADgb0Tt3\np6ywgNB/QXlpRv0zLx+P/9sdsFME9TnBQ9GivWM86sYcEJRRR+dn3Pyv9IJNzGyK\nAkTzHKmNAgMBAAECggEADiij8wMwNZck9zfIBenXB9iAo+APxSFZO7rQD300OSuu\n43989/TGp0qphOUGx32axHJrkb33G6WSAiAvnvvM5Ba29MCgbokapNqIF3gDXWyl\nwe+8eVdKkWV4WkYDg8RJTSigoMIMbUZdHhADMDknA4O74GdvGpZYvqv422ExIzzd\nDJK21xMd2+3e7qX+n72+0he608A0us7bT+BtWHwbbldyf0MZrAL9aUsx4qIzAfqr\nbqDX9y4v7Gz8ZeJhs/0p2lmAIQfJO6KnojJsLgOYiMxQY6384sCDsz+q3o6bLU/+\nKPy7GN4sysBQxB9suOAWr4YrXmN9GN10Q3E5zLvu2QKBgQDtX3CvI9v8GFnQRgDe\nRA0U3rUNDBREzK7/o2iWvELYI+zT2JEY3ltNpQOKlwpYWT2jPqcMUgGnf00gpjsZ\ndtgL0igL2EU5e1uit2JrwScrItajpZ5bBF5VeWTj+ewEWBJFkfedtKznXjBkEsOu\nycxIm2MEbGUpYdOMcImKOMGeiwKBgQDTtz8cNrHjWk2M/6qb1y2w4r+9ksl4RTL/\ng1hRcgD8wJfmnrKALkbJf0V7kF2trENbIYpj3WkzE+8Q92r50ZSbGB9qajOrOzAH\n4hAXmT/FfRVk4ASLLeUV4XoS0FMxoPOTqceCEiyDcgvXzFQQmiJ/eOqjPzley44Z\nTuDt9vwzRwKBgHC65rUGfq7WkbDLzhXAk8XZjnpHxkh2PJXDcSRE/CnRxeNF8oKw\n9wOE3o2u9YbHuvIQCx1axNZbKrHawC5ztl7Gy6X0a8vEvdwk42TxMjzWKsFFIlNv\nW62UHUn3oxLdELBhhgsrhwHKRYkBMFWOGKpSwU+UeuaQQvtrZqZyFeHJAoGBAJ9X\nDxyA3akq0asI0LKxZCX4wi4/R3pJOnSrudCyaKPRn4FmdxmZupT0QKsaoCaRu6/e\nsnUusnpKymaOj+itH5cKtLo2a+S3ixKjxVC9eg18cpmVMFY/mGa7aFC4kaSMakX8\nRbdTTkUvlFI56hsEpmoh6xYqA1ehA7VwdEEk3fMJAoGAD7hXxUKFMU8jrzJ3hLvw\nHblACuvuijkIPPJ84i4dWmBCgbaUed3+jFe7AT4t1y6DwD6h4EjaakhyY0860Lx7\nl6963bKJ8SUQQmzFoJnTL/TD7c9ubUIeKXf8nO18Onmrurmcq7XP+3a8IwCUIuY8\nJbdG0SRs30xCD7RFF6aoF1Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ye4qf@balasha-nurture.iam.gserviceaccount.com",
+  "client_id": "115243154999427729132",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ye4qf%40balasha-nurture.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
