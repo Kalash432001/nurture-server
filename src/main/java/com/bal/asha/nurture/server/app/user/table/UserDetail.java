@@ -1,4 +1,4 @@
-package com.bal.asha.nurture.server.app.vehicle.domain;
+package com.bal.asha.nurture.server.app.user.table;
 
 
 import jakarta.persistence.*;

@@ -1,7 +1,7 @@
-package com.bal.asha.nurture.server.app.vehicle.rest;
+package com.bal.asha.nurture.server.app.user.controller;
 
-import com.bal.asha.nurture.server.app.vehicle.domain.UserDetail;
-import com.bal.asha.nurture.server.app.vehicle.service.UserDetailService;
+import com.bal.asha.nurture.server.app.user.table.UserDetail;
+import com.bal.asha.nurture.server.app.user.service.UserDetailService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
