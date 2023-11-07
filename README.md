@@ -38,3 +38,9 @@ Server for Bala Asha App
    http://localhost:8080/h2-console
    ```
    Make sure jdbc url is `jdbc:h2:mem:testdb`. you do not need to provide any password. hit `connect` button and you will be logged in
+
+9. If you want to Switch-off the Authorization check at the server, start the app with profile `AuthOff`. you can do it by passing the JVM argument as following
+   ```
+   -Dspring.profiles.active=AuthOff
+   ```
+   
