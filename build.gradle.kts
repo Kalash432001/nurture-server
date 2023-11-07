@@ -27,6 +27,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("com.google.firebase:firebase-admin:9.2.0")
 	implementation("org.projectlombok:lombok")
 	implementation("com.h2database:h2")
 	annotationProcessor("org.projectlombok:lombok")
