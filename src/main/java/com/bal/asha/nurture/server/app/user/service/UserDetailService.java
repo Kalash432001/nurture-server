@@ -1,6 +1,6 @@
 package com.bal.asha.nurture.server.app.user.service;
 
-import com.bal.asha.nurture.server.app.user.table.UserDetail;
+import com.bal.asha.nurture.server.app.user.entity.UserDetail;
 import com.bal.asha.nurture.server.app.user.dto.UserDetailDTO;
 import com.bal.asha.nurture.server.app.user.repository.UserDetailRepository;
 import lombok.AllArgsConstructor;
@@ -23,7 +23,7 @@ public class UserDetailService {
         return userDetailRepository.save(userdetail);
     }
 
-    public Set<UserDetailDTO> getAllUserRecord(){
+    public  Set<UserDetailDTO> getAllUserRecord(){
         return userDetailRepository.getAllUserRecord();
     }
 

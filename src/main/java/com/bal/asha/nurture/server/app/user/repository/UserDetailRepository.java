@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.bal.asha.nurture.server.app.user.table.UserDetail;
+import com.bal.asha.nurture.server.app.user.entity.UserDetail;
 
 import java.util.Set;
 
