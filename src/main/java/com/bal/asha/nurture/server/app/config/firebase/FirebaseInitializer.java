@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 
 @Slf4j
@@ -16,10 +17,9 @@ import java.net.URL;
 public class FirebaseInitializer {
     public FirebaseInitializer() {
         try {
-            URL resource = Resources.getResource("firebase/ServiceKey.json");
-            FileInputStream serviceAccount = new FileInputStream(resource.getFile());
+            InputStream is = getClass().getResourceAsStream("/firebase/ServiceKey.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .setCredentials(GoogleCredentials.fromStream(is))
                     .build();
 
             FirebaseApp.initializeApp(options);
