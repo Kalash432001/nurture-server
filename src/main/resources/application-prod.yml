@@ -1,0 +1,11 @@
+spring:
+  jpa:
+#    database-platform: org.hibernate.dialect.SQLServerDialect
+  datasource:
+#    driverClassName: org.hibernate.dialect.SQLServerDialect
+    url: jdbc:sqlserver://balasha.database.windows.net:1433;database=balasha;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: balasha@balasha
+    password: '{cipher}***************'
+  sql:
+    init:
+      mode: always
