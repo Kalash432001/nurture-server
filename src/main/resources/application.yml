@@ -1,5 +1,6 @@
 server:
   port: 8080
+  shutdown: graceful
   http2:
     enabled: true
   compression:
@@ -12,7 +13,17 @@ spring:
     name: nurture-server
 
 management:
+  health:
+    readinessState:
+      enabled: true
+    livenessState:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
   endpoints:
     web:
       exposure:
         include: "*"
+
