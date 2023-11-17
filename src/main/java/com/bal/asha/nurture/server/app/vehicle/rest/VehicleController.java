@@ -1,7 +1,7 @@
 package com.bal.asha.nurture.server.app.vehicle.rest;
 
 import com.bal.asha.nurture.server.app.vehicle.domain.Vehicle;
-import com.bal.asha.nurture.server.app.vehicle.domain.dto.VehicleDto;
+import com.bal.asha.nurture.server.app.vehicle.dto.VehicleDto;
 import com.bal.asha.nurture.server.app.vehicle.service.VehicleService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

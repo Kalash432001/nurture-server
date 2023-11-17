@@ -1,4 +1,4 @@
-package com.bal.asha.nurture.server.app.vehicle.domain.dto;
+package com.bal.asha.nurture.server.app.vehicle.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
