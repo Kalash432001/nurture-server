@@ -1,6 +1,7 @@
 package com.bal.asha.nurture.server.app.vehicle.domain;
 
 
+import com.bal.asha.nurture.server.common.domain.DomainAggregateRoot;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,14 +9,13 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 @Setter
 @EqualsAndHashCode
 @Entity
 @ToString
-public class Vehicle {
+public class Vehicle extends DomainAggregateRoot {
 
     private static final long serialVersionUID = 1L;
 
@@ -49,9 +49,6 @@ public class Vehicle {
     private String insuranceId;
     private String showroomPrice;
     private String onRoadPrice;
-
-    private String createdBy;
-    private LocalDateTime createdDate;
 
     public static Vehicle create(String type, String modelCode, String brandName, LocalDate date) {
         Vehicle o = new Vehicle();

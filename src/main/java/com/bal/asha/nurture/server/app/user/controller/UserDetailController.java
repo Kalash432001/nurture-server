@@ -1,16 +1,14 @@
 package com.bal.asha.nurture.server.app.user.controller;
 
-import com.bal.asha.nurture.server.app.user.dto.UserDetailDTO;
-import com.bal.asha.nurture.server.app.user.entity.UserDetail;
+import com.bal.asha.nurture.server.app.user.domain.dto.UserDetailDTO;
+import com.bal.asha.nurture.server.app.user.domain.entity.UserDetail;
 import com.bal.asha.nurture.server.app.user.service.UserDetailService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 
 @Slf4j

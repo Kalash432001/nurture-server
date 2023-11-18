@@ -1,16 +1,16 @@
 package com.bal.asha.nurture.server.app.insurance.domain;
 
+import com.bal.asha.nurture.server.common.domain.DomainAggregateRoot;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
 @EqualsAndHashCode
 @Entity
-public class Insurance implements Serializable {
+public class Insurance extends DomainAggregateRoot {
 
     private static final long serialVersionUID = 1L;
 

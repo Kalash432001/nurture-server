@@ -1,8 +1,8 @@
 package com.bal.asha.nurture.server.app.user.service;
 
-import com.bal.asha.nurture.server.app.user.entity.UserDetail;
-import com.bal.asha.nurture.server.app.user.dto.UserDetailDTO;
-import com.bal.asha.nurture.server.app.user.repository.UserDetailRepository;
+import com.bal.asha.nurture.server.app.user.domain.entity.UserDetail;
+import com.bal.asha.nurture.server.app.user.domain.dto.UserDetailDTO;
+import com.bal.asha.nurture.server.app.user.domain.entity.repository.UserDetailRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

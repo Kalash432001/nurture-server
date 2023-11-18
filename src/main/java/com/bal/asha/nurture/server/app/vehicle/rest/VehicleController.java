@@ -25,7 +25,7 @@ public class VehicleController {
 
     @GetMapping("vehicle/persist")
     public Vehicle createNewVehicle(){
-        //log.info("Going to Create Anonymous Vehicle");
+        log.info("Going to Create Anonymous Vehicle");
         final Vehicle vehicle = Vehicle.create("type","modelCode", "brandName", LocalDate.now());
         return this.vehicleService.save(vehicle);
     }
@@ -38,7 +38,7 @@ public class VehicleController {
     //@Cacheable("vehicle")
     @GetMapping("search/cache")
     public Iterable<Vehicle> cache(@QuerydslPredicate(root = Vehicle.class) Predicate predicate) {
-       // log.info("Going to search in car database");
+        log.info("Going to search in car database");
         return vehicleService.findAll(predicate);
     }
 

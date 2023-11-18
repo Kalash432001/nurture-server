@@ -3,8 +3,8 @@ package com.bal.asha.nurture.server.app.vehicle.domain;
 
 import com.bal.asha.nurture.server.app.vehicle.domain.record.VehicleRecord;
 import com.bal.asha.nurture.server.app.vehicle.domain.vo.CompositeOutputVO;
+import com.bal.asha.nurture.server.common.domain.CustomRepository;
 import jakarta.persistence.QueryHint;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.data.repository.query.Param;
@@ -17,7 +17,7 @@ import java.util.Set;
 import static org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE;
 
 @Repository
-public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
+public interface VehicleRepository extends CustomRepository<Vehicle, Integer> {
 
     @QueryHints(@QueryHint(name = HINT_FETCH_SIZE, value = "1000"))
     @Query("select new com.bal.asha.nurture.server.app.vehicle.domain.vo.CompositeOutputVO(v.id,v.type,v.modelCode,v.brandName,v.launchDate,i.insuredBy,i.insuredOn) from Vehicle v, Insurance i where v.id=i.id and v.brandName= :brandName")

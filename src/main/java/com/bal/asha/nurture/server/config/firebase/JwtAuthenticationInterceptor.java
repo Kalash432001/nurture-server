@@ -1,4 +1,4 @@
-package com.bal.asha.nurture.server.app.config.firebase;
+package com.bal.asha.nurture.server.config.firebase;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -24,6 +24,7 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
             // Validate the JWT token (you need to implement this)
             AuthToken verifiedToken = isValidToken(jwtToken);
             if (verifiedToken.isValid()) {
+                //SecurityContext securityContext = SecurityContextHolder.getContext();
                 return true; // Continue processing the request
             }
         }

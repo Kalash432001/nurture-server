@@ -1,4 +1,4 @@
-package com.bal.asha.nurture.server.app.config.firebase;
+package com.bal.asha.nurture.server.config.firebase;
 
 import com.google.firebase.auth.FirebaseToken;
 import lombok.AllArgsConstructor;
