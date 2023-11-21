@@ -40,11 +40,12 @@ public class AllowedUserService {
         return allowedUserRepository.save(allowedUser.activate());
     }
 
-    private AllowedUser getUser(UUID userId) {
+    public AllowedUser getUser(UUID userId) {
         return allowedUserRepository.findById(userId).orElseThrow(() -> new NurtureServerException("User with Id :" + userId + " Doesn't Exists"));
     }
 
     public Page<AllowedUser> search(Predicate spec, Pageable pageable) {
         return allowedUserRepository.findAll(spec, pageable);
     }
+
 }

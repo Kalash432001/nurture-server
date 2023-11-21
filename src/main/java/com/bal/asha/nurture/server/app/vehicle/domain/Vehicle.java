@@ -21,8 +21,9 @@ public class Vehicle extends DomainAggregateRoot {
 
     @Id
     @Column(name = "ID", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VehicleId")
+    @SequenceGenerator(name = "VehicleId", sequenceName = "VEHICLE_SEQ", initialValue = 500)
+    private Long id;
 
     @Column(name = "type", nullable = false)
     private String type;
