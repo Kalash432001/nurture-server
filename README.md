@@ -27,7 +27,10 @@ Server for Bala Asha App
    Instructions for same can also be found at [this page](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 5. Open the project in your favorite IDE. ensure that Java version is set to 21
 
-6. run the spring boot application. `NurtureServerApplication` is the Main class
+6. Run the spring boot application by setting profile as `local`. `NurtureServerApplication` is the Main class. 
+   ```
+   -Dspring.profiles.active=local
+   ```
 
 7. App will start at following URL
    ```bash
@@ -39,8 +42,13 @@ Server for Bala Asha App
    ```
    Make sure jdbc url is `jdbc:h2:mem:testdb`. you do not need to provide any password. hit `connect` button and you will be logged in
 
-9. If you want to Switch-off the Authorization check at the server, start the app with profile `AuthOff`. you can do it by passing the JVM argument as following
+9. If you want to Switch-off the Authorization check at the server, start the app with profile `AuthOff` (along with `local`). you can do it by passing the JVM argument as following
    ```
-   -Dspring.profiles.active=AuthOff
+   -Dspring.profiles.active=local,AuthOff
    ```
+10. Swagger is enabled at following URL
+   ```curl
+   http://localhost:8080/swagger-ui/index.html#/
+   ```
+11. 
    
