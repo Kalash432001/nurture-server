@@ -27,7 +27,7 @@ Server for Bala Asha App
    Instructions for same can also be found at [this page](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 5. Open the project in your favorite IDE. ensure that Java version is set to 21
 
-6. Run the spring boot application by setting profile as `local`. `NurtureServerApplication` is the Main class. 
+6. Run the spring boot application by setting profile as `local` as following. `NurtureServerApplication` is the Main class. 
    ```
    -Dspring.profiles.active=local
    ```
@@ -47,8 +47,8 @@ Server for Bala Asha App
    -Dspring.profiles.active=local,AuthOff
    ```
 10. Swagger is enabled at following URL
-   ```curl
-   http://localhost:8080/swagger-ui/index.html#/
-   ```
-11. 
+    ```curl
+    http://localhost:8080/swagger-ui/index.html#/
+    ```
+
    
