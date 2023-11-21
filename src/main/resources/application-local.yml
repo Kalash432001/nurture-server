@@ -16,3 +16,6 @@ spring:
     properties:
       hibernate:
         default_schema: nurture
+  sql:
+    init:
+      data-locations: classpath:data-local.sql
