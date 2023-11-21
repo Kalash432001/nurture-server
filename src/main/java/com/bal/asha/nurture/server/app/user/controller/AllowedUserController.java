@@ -18,9 +18,11 @@ import java.util.UUID;
 
 
 @Slf4j
+@CrossOrigin
 @Validated
-@RestController("admin/allow-user")
+@RestController
 @AllArgsConstructor
+//@RequestMapping(("admin/allow-user"))
 public class AllowedUserController {
 
     private AllowedUserService allowedUserService;
@@ -40,7 +42,12 @@ public class AllowedUserController {
         return allowedUserService.activateUser(userId);
     }
 
-    /*
+    @PostMapping("/disable")
+    public AllowedUser disable(@RequestParam("userId") UUID userId) {
+        return allowedUserService.disableUser(userId);
+    }
+
+      /*
     In Swagger, sample value for spec: {"status": "ACTIVE"}
     sample value for pageable :
                 {
@@ -51,11 +58,6 @@ public class AllowedUserController {
                   ]
                 }
      */
-    @PostMapping("/disable")
-    public AllowedUser disable(@RequestParam("userId") UUID userId) {
-        return allowedUserService.disableUser(userId);
-    }
-
     @GetMapping("/search")
     public Page<AllowedUser> search(@QuerydslPredicate(root = AllowedUser.class) Predicate spec, @PageableDefault(sort = {"createdDate"}, direction = Sort.Direction.DESC, size = 50) Pageable pageable) {
         return allowedUserService.search(spec, pageable);

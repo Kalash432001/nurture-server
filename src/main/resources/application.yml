@@ -11,6 +11,10 @@ server:
 spring:
   application:
     name: nurture-server
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    datetime-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Kolkata
 
 management:
   health:

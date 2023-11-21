@@ -1,5 +1,6 @@
 package com.bal.asha.nurture.server.common.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -36,6 +37,7 @@ public abstract class DomainAggregateRoot {
     @CreatedDate
     @Column(name = "created_date", nullable = false, updatable = false)
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Kolkata")
     private LocalDateTime createdDate;
 
     @LastModifiedBy
@@ -49,6 +51,7 @@ public abstract class DomainAggregateRoot {
     @LastModifiedDate
     @Column(name = "last_modified_date", updatable = false)
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Kolkata")
     private LocalDateTime lastModifiedDate;
 
     @Version

@@ -1,5 +1,6 @@
-package com.bal.asha.nurture.server.config.firebase;
+package com.bal.asha.nurture.server.config.security;
 
+import com.bal.asha.nurture.server.config.firebase.AuthToken;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;
