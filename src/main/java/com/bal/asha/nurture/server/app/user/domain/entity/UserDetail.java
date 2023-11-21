@@ -1,7 +1,7 @@
 package com.bal.asha.nurture.server.app.user.domain.entity;
 
 
-import com.bal.asha.nurture.server.app.user.domain.dto.UserDetailDTO;
+import com.bal.asha.nurture.server.app.user.domain.UserDetailDTO;
 import com.bal.asha.nurture.server.common.domain.DomainAggregateRoot;
 import jakarta.persistence.*;
 import lombok.*;

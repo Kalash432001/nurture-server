@@ -1,11 +1,10 @@
 package com.bal.asha.nurture.server.app.user.service;
 
+import com.bal.asha.nurture.server.app.user.domain.UserDetailDTO;
 import com.bal.asha.nurture.server.app.user.domain.entity.UserDetail;
-import com.bal.asha.nurture.server.app.user.domain.dto.UserDetailDTO;
 import com.bal.asha.nurture.server.app.user.domain.entity.repository.UserDetailRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -15,11 +14,9 @@ import java.util.Set;
 @AllArgsConstructor
 public class UserDetailService {
 
-    @Autowired
     private UserDetailRepository userDetailRepository;
 
     public UserDetail save(UserDetail userdetail) {
-
         return userDetailRepository.save(userdetail);
     }
 
