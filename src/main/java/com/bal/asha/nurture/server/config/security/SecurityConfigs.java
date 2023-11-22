@@ -9,22 +9,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfigs {
 
-    private static final String[] AUTH_ALLOWLIST = {
-
-            // for Swagger UI v2
-            "/v2/api-docs",
-            "/swagger-ui.html",
-            "/swagger-resources",
-            "/swagger-resources/**",
-            "/configuration/ui",
-            "/configuration/security",
-            "/webjars/**",
-
-            // for Swagger UI v3 (OpenAPI)
-            "/v3/api-docs/**",
-            "/swagger-ui/**"
-    };
-
     @Bean
     SecurityFilterChain web(HttpSecurity http) throws Exception {
         http

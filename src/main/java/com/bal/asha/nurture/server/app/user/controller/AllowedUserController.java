@@ -22,7 +22,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @AllArgsConstructor
-//@RequestMapping(("admin/allow-user"))
+@RequestMapping(("admin/allow-user"))
 public class AllowedUserController {
 
     private AllowedUserService allowedUserService;
