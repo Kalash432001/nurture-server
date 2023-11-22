@@ -16,6 +16,9 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
         // Your authentication logic here
         // Check if the "Authorization" header is present and contains a valid JWT token.
+        if(isSwagger(request)){
+            return true;
+        }
 
         String authorizationHeader = request.getHeader("Authorization");
 
@@ -33,6 +36,11 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
         // If the token is not valid or missing, send an unauthorized response
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         return false;
+    }
+
+    private boolean isSwagger(HttpServletRequest request) {
+        String uri = request.getRequestURI();
+        return uri.contains("api-docs") || uri.contains("swagger");
     }
 
     private AuthToken isValidToken(String token) {
