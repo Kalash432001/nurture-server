@@ -1,6 +1,7 @@
 package com.bal.asha.nurture.server.app.user.controller;
 
 import com.bal.asha.nurture.server.app.user.domain.AllowedUserDto;
+import com.bal.asha.nurture.server.app.user.domain.UserType;
 import com.bal.asha.nurture.server.app.user.domain.entity.AllowedUser;
 import com.bal.asha.nurture.server.app.user.service.AllowedUserService;
 import com.querydsl.core.types.Predicate;
@@ -35,6 +36,11 @@ public class AllowedUserController {
     @PostMapping("/update")
     public AllowedUser update(@RequestBody AllowedUser allowedUser) {
         return allowedUserService.update(allowedUser);
+    }
+
+    @PostMapping("/update-type")
+    public AllowedUser updateType(@RequestParam("userId") UUID userId, @RequestParam("type") UserType type) {
+        return allowedUserService.updateType(userId,type);
     }
 
     @PostMapping("/activate")

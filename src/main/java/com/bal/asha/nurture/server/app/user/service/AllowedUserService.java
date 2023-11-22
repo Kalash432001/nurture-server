@@ -1,6 +1,7 @@
 package com.bal.asha.nurture.server.app.user.service;
 
 import com.bal.asha.nurture.server.app.user.domain.AllowedUserDto;
+import com.bal.asha.nurture.server.app.user.domain.UserType;
 import com.bal.asha.nurture.server.app.user.domain.entity.AllowedUser;
 import com.bal.asha.nurture.server.app.user.domain.entity.repository.AllowedUserRepository;
 import com.bal.asha.nurture.server.common.exception.NurtureServerException;
@@ -48,4 +49,8 @@ public class AllowedUserService {
         return allowedUserRepository.findAll(spec, pageable);
     }
 
+    public AllowedUser updateType(UUID userId, UserType type) {
+        AllowedUser user = getUser(userId);
+        return allowedUserRepository.save(user.updateType(type));
+    }
 }

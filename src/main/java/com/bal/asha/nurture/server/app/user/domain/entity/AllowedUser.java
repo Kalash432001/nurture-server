@@ -43,4 +43,9 @@ public class AllowedUser extends DomainAggregateRoot {
         status = AllowedUserStatus.ACTIVE;
         return this;
     }
+
+    public AllowedUser updateType(UserType type) {
+        this.type = type;
+        return this;
+    }
 }
