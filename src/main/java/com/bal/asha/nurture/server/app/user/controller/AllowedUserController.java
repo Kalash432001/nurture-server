@@ -19,7 +19,6 @@ import java.util.UUID;
 
 
 @Slf4j
-@CrossOrigin
 @Validated
 @RestController
 @AllArgsConstructor

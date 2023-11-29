@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static com.bal.asha.nurture.server.app.user.domain.AllowedUserStatus.ACTIVE;
+
 @Slf4j
 @Service
 @AllArgsConstructor
@@ -51,5 +53,9 @@ public class AllowedUserService {
     public AllowedUser updateType(UUID userId, UserType type) {
         AllowedUser user = getUser(userId);
         return allowedUserRepository.save(user.updateType(type));
+    }
+
+    public boolean isAllowed(String email) {
+        return allowedUserRepository.existsByEmailIdAndStatus(email, ACTIVE);
     }
 }

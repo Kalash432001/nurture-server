@@ -42,9 +42,9 @@ Server for Bala Asha App
    ```
    Make sure jdbc url is `jdbc:h2:mem:testdb`. you do not need to provide any password. hit `connect` button and you will be logged in
 
-9. If you want to Switch-off the Authorization check at the server, start the app with profile `AuthOff` (along with `local`). you can do it by passing the JVM argument as following
+9. If you want to Switch-off the Authorization check at the server, start the app with profile `AuthOn` (along with `local`). you can do it by passing the JVM argument as following
    ```
-   -Dspring.profiles.active=local,AuthOff
+   -Dspring.profiles.active=local,AuthOn
    ```
 10. Swagger is enabled at following URL
     ```curl
