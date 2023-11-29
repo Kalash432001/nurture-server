@@ -5,7 +5,6 @@ import com.bal.asha.nurture.server.app.user.domain.UserType;
 import com.bal.asha.nurture.server.app.user.domain.entity.AllowedUser;
 import com.bal.asha.nurture.server.app.user.domain.entity.repository.AllowedUserRepository;
 import com.bal.asha.nurture.server.common.exception.NurtureServerException;
-import com.bal.asha.nurture.server.common.util.ProjectionUtil;
 import com.querydsl.core.types.Predicate;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +22,7 @@ public class AllowedUserService {
     private AllowedUserRepository allowedUserRepository;
 
     public AllowedUser save(AllowedUserDto allowedUserDto) {
-        AllowedUser allowedUser = ProjectionUtil.map(allowedUserDto, AllowedUser.class);
+        AllowedUser allowedUser = AllowedUser.create(allowedUserDto.getEmailId(), allowedUserDto.getType());
         return allowedUserRepository.save(allowedUser);
     }
 
