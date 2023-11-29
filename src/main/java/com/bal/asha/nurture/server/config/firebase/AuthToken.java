@@ -22,4 +22,8 @@ public class AuthToken {
     public String getEmail(){
         return token.getEmail();
     }
+
+    public String getProfilePictureUri() {
+        return token.getPicture();
+    }
 }

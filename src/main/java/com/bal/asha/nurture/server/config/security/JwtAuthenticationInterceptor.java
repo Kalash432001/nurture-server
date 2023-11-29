@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.UUID;
+
 @Slf4j
 @AllArgsConstructor
 public class JwtAuthenticationInterceptor implements HandlerInterceptor {
@@ -33,6 +35,7 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
             AuthToken verifiedToken = isValidToken(jwtToken);
             if (verifiedToken.isValid()) {
                 if(allowedUser(verifiedToken.getEmail())) {
+                    updateProfilePicUri(verifiedToken.getEmail(), verifiedToken.getProfilePictureUri());
                     return true; // Continue processing the request
                 }else{
                     log.error("User : {} not allowed", verifiedToken.getEmail());
@@ -44,6 +47,10 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
         // If the token is not valid or missing, send an unauthorized response
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         return false;
+    }
+
+    private void updateProfilePicUri(String email, String profilePictureUri) {
+        allowedUserService.updateProfilePicUri(email, profilePictureUri);
     }
 
     private boolean allowedUser(String email) {

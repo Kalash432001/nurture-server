@@ -34,6 +34,9 @@ public class AllowedUser extends DomainAggregateRoot {
     @Column(nullable = false)
     private UserType type;
 
+    @Column(nullable = true)
+    private String profilePictureUrl;
+
     public static AllowedUser create(String emailId, UserType type) {
         AllowedUser user = new AllowedUser();
         user.emailId = emailId;
@@ -53,6 +56,11 @@ public class AllowedUser extends DomainAggregateRoot {
 
     public AllowedUser updateType(UserType type) {
         this.type = type;
+        return this;
+    }
+
+    public AllowedUser updateProfilePicture(String url){
+        this.profilePictureUrl = url;
         return this;
     }
 }

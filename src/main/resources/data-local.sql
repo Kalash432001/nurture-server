@@ -7,25 +7,25 @@ INSERT INTO nurture.Insurance("ID","TYPE","INSURED_BY","INSURED_ON", "STARTS_ON"
 INSERT INTO nurture.Insurance("ID","TYPE","INSURED_BY","INSURED_ON", "STARTS_ON","COVER_PLASTIC_ITEMS", "COVER_GLASS_ITEMS","COVER_INTERIOR_ITEMS", "COST", "EXPIRY", "NAME","CREATED_BY","CREATED_DATE")VALUES(3,'Car Insurance','RELIANCE','20200101','20200101','yes','no','yes', '1200000', '20220818', '3','ish','20200101');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af67', 'ishmahajan', 'ishmahajan', 'ishm@gmail.com', 'ACTIVE', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af67', 'ishmahajan', 'ishmahajan', 'ishm@gmail.com', null, 'ACTIVE', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af68', 'system', 'system', 'system@gmail.com', 'ACTIVE', 'SUPERINTENDENT');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af68', 'system', 'system', 'system@gmail.com', null, 'ACTIVE', 'SUPERINTENDENT');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af69', 'mayank', 'mayank', 'mayank@gmail.com', 'ACTIVE', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af69', 'mayank', 'mayank', 'mayank@gmail.com', null, 'ACTIVE', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af70', 'kalash', 'kalash', 'kalash@gmail.com', 'ACTIVE', 'WORKER');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af70', 'kalash', 'kalash', 'kalash@gmail.com', null, 'ACTIVE', 'WORKER');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af71', 'aman', 'aman', 'aman@gmail.com', 'DISABLED', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af71', 'aman', 'aman', 'aman@gmail.com', null, 'DISABLED', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af72', 'neha', 'neha', 'neha@gmail.com', 'ACTIVE', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af72', 'neha', 'neha', 'neha@gmail.com', null, 'ACTIVE', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af73', 'ishmahajan', 'ishmahajan', 'ishmahajanbhanu@gmail.com', 'ACTIVE', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af73', 'ishmahajan', 'ishmahajan', 'ishmahajanbhanu@gmail.com', null, 'ACTIVE', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af74', 'system', 'system', 'bal.asha.care@gmail.com', 'ACTIVE', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af74', 'system', 'system', 'bal.asha.care@gmail.com', null, 'ACTIVE', 'ADMIN');
