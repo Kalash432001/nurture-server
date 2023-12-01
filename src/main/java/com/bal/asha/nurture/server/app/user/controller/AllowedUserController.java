@@ -52,6 +52,11 @@ public class AllowedUserController {
         return allowedUserService.disableUser(userId);
     }
 
+    @PostMapping("/allowed")
+    public boolean allowed(@RequestParam("emailId") String emailId) {
+        return allowedUserService.isAllowed(emailId);
+    }
+
       /*
     In Swagger, sample value for spec: {"status": "ACTIVE"}
     sample value for pageable :
