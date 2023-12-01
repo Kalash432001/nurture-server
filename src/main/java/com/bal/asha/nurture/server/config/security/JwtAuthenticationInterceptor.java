@@ -12,8 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.UUID;
-
 @Slf4j
 @AllArgsConstructor
 public class JwtAuthenticationInterceptor implements HandlerInterceptor {
@@ -39,6 +37,7 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
                     return true; // Continue processing the request
                 }else{
                     log.error("User : {} not allowed", verifiedToken.getEmail());
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     return false;
                 }
             }
