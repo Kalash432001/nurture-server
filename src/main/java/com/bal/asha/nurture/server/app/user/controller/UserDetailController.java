@@ -16,6 +16,7 @@ import java.util.Set;
 @Validated
 @RestController
 @AllArgsConstructor
+@CrossOrigin
 public class UserDetailController {
 
     private UserDetailService userDetailService;
@@ -41,7 +42,7 @@ public class UserDetailController {
 //        UserDetail user = UserDetail.toUserDetail(userDetailDTO);
 //        return UserDetail.toUserDetailDTO(userDetailService.update(user));
 //    }
-
+    @CrossOrigin
     @PutMapping ("/update-user")
     public UserDetailDTO updateUser(@RequestBody UserDetailDTO userDetailDTO) {
         UserDetail user = UserDetail.toUserDetail(userDetailDTO);

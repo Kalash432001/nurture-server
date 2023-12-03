@@ -18,7 +18,17 @@ public class UserDetailService {
     private UserDetailRepository userDetailRepository;
 
     public UserDetail save(UserDetail userdetail) {
-        return userDetailRepository.save(userdetail);
+        UserDetail u;
+
+        if(userDetailRepository.findExistByUserEmail(userdetail.getUserEmail())){
+            System.out.println("In if");
+            u=userDetailRepository.findByUserEmail(userdetail.getUserEmail());;
+        }
+        else{
+            System.out.println("In else");
+            u=userDetailRepository.save(userdetail);
+        }
+        return u;
     }
 
     public  Set<UserDetail> getAllUserRecord(){

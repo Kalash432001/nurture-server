@@ -37,16 +37,16 @@ public class UserDetail extends DomainAggregateRoot {
     @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(name = "id_proof_type", nullable = false)
+    @Column(name = "id_proof_type")
     private String idProofType;
 
-    @Column(name = "id_dtls", nullable = false)
+    @Column(name = "id_dtls")
     private String idDtls;
 
     @Column(name = "address")
     private String address;
 
-    @Column(name = "mobile_No", nullable = false)
+    @Column(name = "mobile_No")
     private String mobileNo;
 
     @Column(name = "user_type")
