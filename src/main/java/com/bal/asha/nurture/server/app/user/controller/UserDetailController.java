@@ -1,6 +1,7 @@
 package com.bal.asha.nurture.server.app.user.controller;
 
 import com.bal.asha.nurture.server.app.user.domain.UserDetailDTO;
+import com.bal.asha.nurture.server.app.user.domain.entity.AllowedUser;
 import com.bal.asha.nurture.server.app.user.domain.entity.UserDetail;
 import com.bal.asha.nurture.server.app.user.service.UserDetailService;
 import lombok.AllArgsConstructor;
@@ -32,8 +33,22 @@ public class UserDetailController {
     @GetMapping("/get-users")
     public Set<UserDetailDTO> getAllUsers(){
 
-        return userDetailService.getAllUserRecord();
+        return UserDetail.toUserDetailDTO(userDetailService.getAllUserRecord());
     }
+
+//    @PostMapping("/update-user")
+//    public Set<UserDetailDTO> updateUser(@RequestBody UserDetailDTO userDetailDTO){
+//        UserDetail user = UserDetail.toUserDetail(userDetailDTO);
+//        return UserDetail.toUserDetailDTO(userDetailService.update(user));
+//    }
+
+    @PutMapping ("/update-user")
+    public UserDetailDTO updateUser(@RequestBody UserDetailDTO userDetailDTO) {
+        UserDetail user = UserDetail.toUserDetail(userDetailDTO);
+        System.out.println("hiiiii" + user.toString());
+        return UserDetail.toUserDetailDTO(userDetailService.update(user));
+    }
+
 
 }
 

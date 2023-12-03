@@ -14,13 +14,15 @@ import java.time.LocalDateTime;
 public class UserDetailDTO {
 
 
-        private int userId;
         private String userName;
+        private String userEmail;
         private String idProofType;
         private String idDtls;
         private String address;
         private String mobileNo;
         private String userType;
         private LocalDateTime createDate;
+
+
 
 }
