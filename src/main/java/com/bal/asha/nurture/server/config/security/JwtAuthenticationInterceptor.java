@@ -1,22 +1,26 @@
 package com.bal.asha.nurture.server.config.security;
 
+import com.bal.asha.nurture.server.app.user.service.AllowedUserService;
 import com.bal.asha.nurture.server.config.firebase.AuthToken;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
+@AllArgsConstructor
 public class JwtAuthenticationInterceptor implements HandlerInterceptor {
+
+    private AllowedUserService allowedUserService;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
-        // Your authentication logic here
-        // Check if the "Authorization" header is present and contains a valid JWT token.
-        if(isSwagger(request)){
+
+        if(request.getMethod().equals("OPTIONS") || isSwagger(request)){
             return true;
         }
 
@@ -28,14 +32,28 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
             // Validate the JWT token (you need to implement this)
             AuthToken verifiedToken = isValidToken(jwtToken);
             if (verifiedToken.isValid()) {
-                //SecurityContext securityContext = SecurityContextHolder.getContext();
-                return true; // Continue processing the request
+                if(allowedUser(verifiedToken.getEmail())) {
+                    updateProfilePicUri(verifiedToken.getEmail(), verifiedToken.getProfilePictureUri());
+                    return true; // Continue processing the request
+                }else{
+                    log.error("User : {} not allowed", verifiedToken.getEmail());
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    return false;
+                }
             }
         }
 
         // If the token is not valid or missing, send an unauthorized response
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         return false;
+    }
+
+    private void updateProfilePicUri(String email, String profilePictureUri) {
+        allowedUserService.updateProfilePicUri(email, profilePictureUri);
+    }
+
+    private boolean allowedUser(String email) {
+        return allowedUserService.isAllowed(email);
     }
 
     private boolean isSwagger(HttpServletRequest request) {

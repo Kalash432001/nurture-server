@@ -28,11 +28,21 @@ public class AllowedUser extends DomainAggregateRoot {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private AllowedUserStatus status;
+    private AllowedUserStatus status = AllowedUserStatus.ACTIVE;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private UserType type;
+
+    @Column(nullable = true)
+    private String profilePictureUrl;
+
+    public static AllowedUser create(String emailId, UserType type) {
+        AllowedUser user = new AllowedUser();
+        user.emailId = emailId;
+        user.type = type;
+        return user;
+    }
 
     public AllowedUser disable() {
         status = AllowedUserStatus.DISABLED;
@@ -46,6 +56,11 @@ public class AllowedUser extends DomainAggregateRoot {
 
     public AllowedUser updateType(UserType type) {
         this.type = type;
+        return this;
+    }
+
+    public AllowedUser updateProfilePicture(String url){
+        this.profilePictureUrl = url;
         return this;
     }
 }

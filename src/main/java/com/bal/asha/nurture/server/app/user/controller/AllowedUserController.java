@@ -19,7 +19,6 @@ import java.util.UUID;
 
 
 @Slf4j
-@CrossOrigin
 @Validated
 @RestController
 @AllArgsConstructor
@@ -51,6 +50,11 @@ public class AllowedUserController {
     @PostMapping("/disable")
     public AllowedUser disable(@RequestParam("userId") UUID userId) {
         return allowedUserService.disableUser(userId);
+    }
+
+    @PostMapping("/allowed")
+    public boolean allowed(@RequestParam("emailId") String emailId) {
+        return allowedUserService.isAllowed(emailId);
     }
 
       /*

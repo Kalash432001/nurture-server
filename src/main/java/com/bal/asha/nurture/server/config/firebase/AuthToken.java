@@ -18,4 +18,12 @@ public class AuthToken {
     public static AuthToken inValid() {
         return AuthToken.create(false, null);
     }
+
+    public String getEmail(){
+        return token.getEmail();
+    }
+
+    public String getProfilePictureUri() {
+        return token.getPicture();
+    }
 }
