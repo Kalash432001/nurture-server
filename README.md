@@ -13,9 +13,9 @@ Server for Bala Asha App
    https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
    ```
 
-2. Install java 21
-   ```curl
-   https://www.azul.com/downloads/?package=jdk#zulu
+2. Install java 17
+   ```
+   https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
    ```
 
 3. Fork the GitHub Repository. Instructions for same are [available here](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
