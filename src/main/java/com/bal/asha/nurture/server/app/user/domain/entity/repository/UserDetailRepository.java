@@ -19,8 +19,8 @@ import static org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE;
 public interface UserDetailRepository extends CustomRepository<UserDetail, Integer> {
 
     @QueryHints(@QueryHint(name = HINT_FETCH_SIZE, value = "1000"))
-    @Query("select new com.bal.asha.nurture.server.app.user.domain.entity.UserDetail( userId, userName, userEmail,idProofType, idDtls,address, mobileNo, userType,createdDate) from UserDetail")
-    Set<UserDetail> getAllUserRecord();
+    @Query("select new com.bal.asha.nurture.server.app.user.domain.entity.UserDetailDTO( userId, userName, userEmail,idProofType, idDtls,address, mobileNo, userType,createdDate) from UserDetail")
+    Set<UserDetailDTO> getAllUserRecord();
 
 
     @Transactional(readOnly= true)

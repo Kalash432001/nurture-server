@@ -28,30 +28,23 @@ public class UserDetailService {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-    public UserDetail save(UserDetail userdetail) {
+    public UserDetailDTO save(UserDetail userdetail) {
         UserDetail u;
 
         if(userDetailRepository.findExistByUserEmail(userdetail.getUserEmail())){
-            System.out.println("In if");
             u=userDetailRepository.findByUserEmail(userdetail.getUserEmail());;
         }
         else{
-            System.out.println("In else");
             u=userDetailRepository.save(userdetail);
         }
-        return u;
+        return UserDetail.toUserDetailDTO(u);
     }
 
-    public  Set<UserDetail> getAllUserRecord(){
+    public  Set<UserDetailDTO> getAllUserRecord(){
         return userDetailRepository.getAllUserRecord();
     }
 
-//    public  Set<UserDetail> update(UserDetail userdetailupdate){
-//
-//        return userDetailRepository.findByUserEmail(userdetailupdate.getUserEmail());
-//    }
-
-    public UserDetail update(String token ,UserDetail userdetailupdate) {
+    public UserDetailDTO update(String token ,UserDetail userdetailupdate) {
 
           String userEmail=jwtTokenUtil.getUserEmail(token.substring(7));
           UserDetail userDetail;
@@ -59,14 +52,12 @@ public class UserDetailService {
           UserAddress userAddress=new UserAddress(userdetailupdate.getAddress().getAddress1(),userdetailupdate.getAddress().getAddress2(),userdetailupdate.getAddress().getCity(),userdetailupdate.getAddress().getZip());
         ;
           if(userDetailRepository.findByUserEmail(userEmail)==null){
-              System.out.println("In If");
               LocalDateTime createDate = LocalDateTime.now();
                            userDetail= new UserDetail(0,userEmail,userdetailupdate.getUserEmail(),userdetailupdate.getIdProofType(), userdetailupdate.getIdDtls(), userAddress,
                      userdetailupdate.getMobileNo(), userdetailupdate.getUserType(), createDate);
 
           }else {
 
-              System.out.println("In Else");
               userDetail=userDetailRepository.findByUserEmail(userEmail);
               userdetailupdate.setUserName(userdetailupdate.getUserName());
               userdetailupdate.setUserName(userdetailupdate.getIdProofType());
@@ -75,7 +66,7 @@ public class UserDetailService {
               userDetail.setMobileNo(userdetailupdate.getMobileNo());
           }
 
-          return userDetailRepository.save(userDetail);
+          return UserDetail.toUserDetailDTO(userDetailRepository.save(userDetail));
     }
 
 

@@ -16,34 +16,26 @@ import java.util.Set;
 @Validated
 @RestController
 @AllArgsConstructor
-@CrossOrigin
 public class UserDetailController {
 
     private UserDetailService userDetailService;
 
-    //http://localhost:8080/user?userId=1&userName=John&idProofType=Passport&idDtls=AB12345&address=123 Main St&mobileNo=1234567890&userType=Customer&createDate=2023-11-02
     @PostMapping("/user")
     @ResponseBody
     public UserDetailDTO addUser(@RequestBody UserDetailDTO userDetailDTO){
-//        UserDetail user= UserDetail.create(userName, idProofType, idDtls, address, mobileNo, userType, createDate);
-        UserDetail user = UserDetail.toUserDetail(userDetailDTO);
-
-        return UserDetail.toUserDetailDTO(userDetailService.save(user));
+       UserDetail user = UserDetail.toUserDetail(userDetailDTO);
+        return userDetailService.save(user);
     }
 
     @GetMapping("/get-users")
     public Set<UserDetailDTO> getAllUsers(){
-
-        return UserDetail.toUserDetailDTO(userDetailService.getAllUserRecord());
+        return userDetailService.getAllUserRecord();
     }
 
-
-    @CrossOrigin
     @PutMapping ("/update-user")
     public UserDetailDTO updateUser(@RequestHeader("Authorization") String token,@RequestBody UserDetailDTO userDetailDTO) {
         UserDetail user = UserDetail.toUserDetail(userDetailDTO);
-        System.out.println("hiiiii" + user.toString());
-        return UserDetail.toUserDetailDTO(userDetailService.update(token ,user));
+        return userDetailService.update(token ,user);
     }
 
 
