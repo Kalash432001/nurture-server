@@ -23,20 +23,11 @@ public interface UserDetailRepository extends CustomRepository<UserDetail, Integ
     Set<UserDetail> getAllUserRecord();
 
 
-//    @Query("select new com.bal.asha.nurture.server.app.user.domain.entity.UserDetail( userId, userName, userEmail,idProofType, idDtls,address, mobileNo, userType,createdDate) from UserDetail u where u.userEmail= :user_email")
-//    UserDetail findByUserEmail(@Param("user_email") String user_email);
-
     @Transactional(readOnly= true)
     UserDetail findByUserEmail(String userEmail);
 
     @Query("Select count(userEmail)=1 from UserDetail u where userEmail=?1")
     boolean findExistByUserEmail(String userEmail);
-
-//    @Modifying
-//    @Query("update om.bal.asha.nurture.server.app.user.domain.entity.UserDetail u set u.status = :status where u.name = :name")
-//    int updateUserSetStatusForName(@Param("status") Integer status,
-//                                   @Param("name") String name);
-
 
 }
 

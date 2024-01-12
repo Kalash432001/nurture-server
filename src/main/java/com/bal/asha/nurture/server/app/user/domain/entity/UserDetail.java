@@ -6,8 +6,6 @@ import com.bal.asha.nurture.server.common.domain.DomainAggregateRoot;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Null;
 import lombok.*;
-import org.apache.qpid.proton.engine.Collector;
-import org.checkerframework.common.aliasing.qual.Unique;
 
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
@@ -30,7 +28,6 @@ public class UserDetail extends DomainAggregateRoot {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
 
-
     @Column(name = "user_email", nullable = false)
     private String userEmail;
 
@@ -43,8 +40,9 @@ public class UserDetail extends DomainAggregateRoot {
     @Column(name = "id_dtls")
     private String idDtls;
 
-    @Column(name = "address")
-    private String address;
+    @Embedded
+    @Column(name="address")
+    private UserAddress address;
 
     @Column(name = "mobile_No")
     private String mobileNo;
@@ -60,17 +58,6 @@ public class UserDetail extends DomainAggregateRoot {
         // Overriding method in the subclass with a different return type
         return 0;
     }
-
-//    public UserDetail(int userId,String userName, String userEmail,String idProofType, String idDtls, String address, String mobileNo, String userType,LocalDateTime date) {
-//        this.userName = userName;
-//        this.userEmail = userEmail;
-//        this.idProofType = idProofType;
-//        this.idDtls = idDtls;
-//        this.address = address;
-//        this.mobileNo = mobileNo;
-//        this.userType = userType;
-//        this.createDate=date;
-//    }
 
 
     public static UserDetailDTO toUserDetailDTO(UserDetail userDetail) {

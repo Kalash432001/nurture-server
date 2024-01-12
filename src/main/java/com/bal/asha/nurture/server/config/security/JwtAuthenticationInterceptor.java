@@ -33,6 +33,7 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
             AuthToken verifiedToken = isValidToken(jwtToken);
             if (verifiedToken.isValid()) {
                 if(allowedUser(verifiedToken.getEmail())) {
+                    System.out.println("Hiii from JWT "+ verifiedToken.getEmail());
                     updateProfilePicUri(verifiedToken.getEmail(), verifiedToken.getProfilePictureUri());
                     return true; // Continue processing the request
                 }else{

@@ -1,5 +1,6 @@
 package com.bal.asha.nurture.server.app.user.domain;
 
+import com.bal.asha.nurture.server.app.user.domain.entity.UserAddress;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ public class UserDetailDTO {
         private String userEmail;
         private String idProofType;
         private String idDtls;
-        private String address;
+        private UserAddress address;
         private String mobileNo;
         private String userType;
         private LocalDateTime createDate;

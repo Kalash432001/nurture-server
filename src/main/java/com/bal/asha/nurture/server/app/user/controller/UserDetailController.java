@@ -37,18 +37,16 @@ public class UserDetailController {
         return UserDetail.toUserDetailDTO(userDetailService.getAllUserRecord());
     }
 
-//    @PostMapping("/update-user")
-//    public Set<UserDetailDTO> updateUser(@RequestBody UserDetailDTO userDetailDTO){
-//        UserDetail user = UserDetail.toUserDetail(userDetailDTO);
-//        return UserDetail.toUserDetailDTO(userDetailService.update(user));
-//    }
+
     @CrossOrigin
     @PutMapping ("/update-user")
-    public UserDetailDTO updateUser(@RequestBody UserDetailDTO userDetailDTO) {
+    public UserDetailDTO updateUser(@RequestHeader("Authorization") String token,@RequestBody UserDetailDTO userDetailDTO) {
         UserDetail user = UserDetail.toUserDetail(userDetailDTO);
         System.out.println("hiiiii" + user.toString());
-        return UserDetail.toUserDetailDTO(userDetailService.update(user));
+        return UserDetail.toUserDetailDTO(userDetailService.update(token ,user));
     }
+
+
 
 
 }

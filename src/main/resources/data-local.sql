@@ -16,7 +16,7 @@ INSERT INTO NURTURE.ALLOWED_USER VALUES
 (0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af69', 'mayank', 'mayank', 'mayank@gmail.com', null, 'ACTIVE', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af70', 'kalash', 'kalash', 'kalash@gmail.com', null, 'ACTIVE', 'WORKER');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af70', 'kalash', 'kalash', 'kalashkimi@gmail.com', null, 'ACTIVE', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
 (0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af71', 'aman', 'aman', 'aman@gmail.com', null, 'DISABLED', 'ADMIN');
