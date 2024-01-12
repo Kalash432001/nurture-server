@@ -15,7 +15,8 @@ Server for Bala Asha App
 
 2. Install java 17
    ```
-   https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+   curl
+   https://www.azul.com/downloads/?package=jdk#zulu
    ```
 
 3. Fork the GitHub Repository. Instructions for same are [available here](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
