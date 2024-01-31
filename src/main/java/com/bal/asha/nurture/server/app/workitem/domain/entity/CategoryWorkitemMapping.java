@@ -22,21 +22,31 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 @EqualsAndHashCode(callSuper = true)
-public class Workitem extends DomainAggregateRoot {
+public class CategoryWorkitemMapping extends DomainAggregateRoot {
 
     private static final long serialVersionUID = 1L;
 
-       
     @Id
-    @Column(name = "workitem_id", nullable = false)
+    @Column(name = "category_workitem_mapping_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int categoryWorkitemMappingId;
+    
+    
+    @Column(name = "workitem_id", nullable = false)
     private int workitemId;
 
-    @Column(name = "workitem_name", nullable = false)
-    private String workitemName;   
+    @Column(name = "category_id", nullable = false)
+    private String categoryId;
     
-    @Column(name = "major_step", nullable = false)
-    private Boolean majorStep;
+    @Column(name = "sequence_number", nullable = false)
+    private String sequenceNumber;
+    
+    
+
+    
+    
+    
+    
 
    
 }
