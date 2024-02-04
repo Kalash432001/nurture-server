@@ -14,17 +14,19 @@ INSERT INTO NURTURE.ALLOWED_USER VALUES
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
 
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af69', 'mayank', 'mayank', 'mayank@gmail.com', null, 'ACTIVE', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af70', 'kalash', 'kalash', 'kalashkimi@gmail.com',null, 'ACTIVE', 'WORKER');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af70', 'kalash', 'kalash', 'kalashkimi@gmail.com', null, 'ACTIVE', 'ADMIN');
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af69', 'mayank', 'mayank', 'mayank@gmail.com', null, 'ACTIVE', 'ADMIN');
+
+
+
 
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
 (0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af71', 'aman', 'aman', 'aman@gmail.com', null, 'DISABLED', 'ADMIN');
 
-INSERT INTO NURTURE.ALLOWED_USER VALUES
-(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af72', 'neha', 'neha', 'neha@gmail.com', null,'ACTIVE', 'ADMIN');
+
 
 INSERT INTO NURTURE.CATEGORY ("CATEGORY_ID", "CATEGORY_NAME", "CREATED_BY","CREATED_DATE", "VERSION" ) VALUES (1, 'Orphaned', 'Mayank','202311112',0);
 INSERT INTO NURTURE.CATEGORY ("CATEGORY_ID", "CATEGORY_NAME", "CREATED_BY","CREATED_DATE", "VERSION" ) VALUES (2, 'Abandoned', 'Mayank','202311112',0);
@@ -38,8 +40,10 @@ INSERT INTO NURTURE.WORK_ITEM ("WORK_ITEM_ID", "WORK_ITEM_NAME", "CREATED_BY","C
 INSERT INTO NURTURE.WORK_ITEM ("WORK_ITEM_ID", "WORK_ITEM_NAME", "CREATED_BY","CREATED_DATE", "VERSION" ) VALUES (5, 'Final report from police', 'Mayank','202311112',0);
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
+(0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af72', 'neha', 'neha', 'neha@gmail.com', null, 'ACTIVE', 'ADMIN');
+
+INSERT INTO NURTURE.ALLOWED_USER VALUES
 (0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af73', 'ishmahajan', 'ishmahajan', 'ishmahajanbhanu@gmail.com', null, 'ACTIVE', 'ADMIN');
 
 INSERT INTO NURTURE.ALLOWED_USER VALUES
 (0, '2020-01-01 00:00:00', '2020-01-01 00:00:00', UUID '486245d5-dcb3-4337-a9c0-60a8ce96af74', 'system', 'system', 'bal.asha.care@gmail.com', null, 'ACTIVE', 'ADMIN');
-

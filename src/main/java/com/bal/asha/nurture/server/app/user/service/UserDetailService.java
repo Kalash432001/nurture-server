@@ -44,24 +44,31 @@ public class UserDetailService {
         return userDetailRepository.getAllUserRecord();
     }
 
+    public  UserDetailDTO getAllUserByEmail(String token ){
+        String userEmail=jwtTokenUtil.getUserEmail(token.substring(7));
+
+        if(userDetailRepository.findByUserEmail(userEmail)==null)
+            return null;
+
+       else return UserDetail.toUserDetailDTO(userDetailRepository.findByUserEmail(userEmail));
+
+    }
+
     public UserDetailDTO update(String token ,UserDetail userdetailupdate) {
 
           String userEmail=jwtTokenUtil.getUserEmail(token.substring(7));
           UserDetail userDetail;
-          System.out.println(userdetailupdate);
-          UserAddress userAddress=new UserAddress(userdetailupdate.getAddress().getAddress1(),userdetailupdate.getAddress().getAddress2(),userdetailupdate.getAddress().getCity(),userdetailupdate.getAddress().getZip());
-        ;
-          if(userDetailRepository.findByUserEmail(userEmail)==null){
+          UserAddress userAddress=new UserAddress(userdetailupdate.getAddress().getAddress1(),userdetailupdate.getAddress().getAddress2(),userdetailupdate.getAddress().getCity(),userdetailupdate.getAddress().getState(),userdetailupdate.getAddress().getZip());
+          if(!userDetailRepository.findExistByUserEmail(userEmail)){
               LocalDateTime createDate = LocalDateTime.now();
                            userDetail= new UserDetail(0,userEmail,userdetailupdate.getUserEmail(),userdetailupdate.getIdProofType(), userdetailupdate.getIdDtls(), userAddress,
                      userdetailupdate.getMobileNo(), userdetailupdate.getUserType(), createDate);
 
           }else {
-
               userDetail=userDetailRepository.findByUserEmail(userEmail);
-              userdetailupdate.setUserName(userdetailupdate.getUserName());
-              userdetailupdate.setUserName(userdetailupdate.getIdProofType());
-              userdetailupdate.setIdDtls(userdetailupdate.getIdDtls());
+              userDetail.setUserName(userdetailupdate.getUserEmail());
+              userDetail.setUserName(userdetailupdate.getIdProofType());
+              userDetail.setIdDtls(userdetailupdate.getIdDtls());
               userDetail.setAddress(userAddress);
               userDetail.setMobileNo(userdetailupdate.getMobileNo());
           }

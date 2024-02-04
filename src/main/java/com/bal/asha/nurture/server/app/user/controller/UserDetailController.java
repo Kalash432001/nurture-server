@@ -16,6 +16,7 @@ import java.util.Set;
 @Validated
 @RestController
 @AllArgsConstructor
+@CrossOrigin
 public class UserDetailController {
 
     private UserDetailService userDetailService;
@@ -28,10 +29,11 @@ public class UserDetailController {
     }
 
     @GetMapping("/get-users")
-    public Set<UserDetailDTO> getAllUsers(){
-        return userDetailService.getAllUserRecord();
+    public UserDetailDTO getUsersByEmail(@RequestHeader("Authorization") String token){
+        return userDetailService.getAllUserByEmail(token);
     }
 
+    @CrossOrigin
     @PutMapping ("/update-user")
     public UserDetailDTO updateUser(@RequestHeader("Authorization") String token,@RequestBody UserDetailDTO userDetailDTO) {
         UserDetail user = UserDetail.toUserDetail(userDetailDTO);

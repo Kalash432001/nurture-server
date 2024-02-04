@@ -23,9 +23,6 @@ import java.util.Set;
 @AllArgsConstructor
 public class UserAddress {
 
-//    @Column(name = "user_email", nullable = false)
-//    private String userEmail;
-
 
     @Column(name = "address1")
     private String address1;
@@ -35,6 +32,9 @@ public class UserAddress {
 
     @Column(name = "city")
     private String city;
+
+    @Column(name = "state")
+    private String state;
 
     @Column(name = "zip")
     private String zip;
