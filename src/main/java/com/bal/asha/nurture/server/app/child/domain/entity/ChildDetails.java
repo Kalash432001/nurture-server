@@ -1,4 +1,4 @@
-package com.bal.asha.nurture.server.app.vehicle.domain;
+package com.bal.asha.nurture.server.app.child.domain.entity;
 
 
 import jakarta.persistence.*;
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @Entity
 @ToString
-public class Child_Dtls {
+public class ChildDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -40,8 +40,8 @@ public class Child_Dtls {
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
-    public static Child_Dtls create(String childId, String childName, String idProof, String area, LocalDate createDate, LocalDate dateOfBirth) {
-        Child_Dtls o = new Child_Dtls();
+    public static ChildDetails create(String childId, String childName, String idProof, String area, LocalDate createDate, LocalDate dateOfBirth) {
+        ChildDetails o = new ChildDetails();
         o.childName = childName;
         o.idProof = idProof;
         o.area = area;

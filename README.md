@@ -13,8 +13,9 @@ Server for Bala Asha App
    https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
    ```
 
-2. Install java 21
-   ```curl
+2. Install java 17
+   ```
+   curl
    https://www.azul.com/downloads/?package=jdk#zulu
    ```
 
